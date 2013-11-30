@@ -11,9 +11,12 @@ class TestSplitName(unittest.TestCase):
 
 	# The test data below is called a "data fixture" because it's fixed ahead of
 	# when the test is run. Constant values like the ones below usually get
-	# all-caps names.
-	NAMES = (u"William Schwartz", # Strings prepended with ``u`` are Unicdoe.
-			  "Jillian Foley", # Strings without ``u`` prepended are raw bytes.
+	# all-caps names. Recall that strings prepended with ``u`` are Unicode and
+	# can include characters with accents, Chinese, etc. Otherwise the string is
+	# a sequence of raw bytes, where each character stands for one byte, per
+	# http://www.asciitable.com.
+	NAMES = (u"William Schwartz",
+			  "Jillian Foley",
 			 u"bLeRdiE flAdElStEiN",
 			 u"Pred_alpop Gormer-tin",
 			 u"James Van Der Beek",
