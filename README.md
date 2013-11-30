@@ -12,7 +12,9 @@ To use the provided `names` module in your project, download `names.py` (and
 optionally `test_names.py`, which contains the unit tests for `names`). You can
 do this with git by running
 
+```bash
     $ git clone https://github.com/wkschwartz/first-last
+```
 
 or by going to https://github.com/wkschwartz/first-last/archive/master.zip.
 
@@ -26,8 +28,10 @@ containing the first and last names respectively. For example if you have a list
 containing your names as strings (either byte strings or Unicode strings), you
 can write
 
+```python
     from names import split_name
     first_name, last_name = split_name(name)
+```
 
 Testing
 -------
@@ -36,7 +40,9 @@ This code has been tested on Python 2.7.6 and Python 3.3.3, both on Mac OS X
 10.8. To run the tests on your system, run `test_names.py` from the command
 line, like so:
 
+```bash
     $ python test_names.py
+```
 
 License
 -------
