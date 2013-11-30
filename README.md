@@ -19,8 +19,8 @@ or by going to https://github.com/wkschwartz/first-last/archive/master.zip.
 Usage
 -----
 
-Copy the `names` file into your project and the `test_names` file into your
-project's tests. The module `names` provides the function `split_name`. Its
+Copy the `names.py` file into your project and the `test_names.py` file into
+your project's tests. The module `names` provides the function `split_name`. Its
 input is a string containing a name. It returns a two-tuple of strings
 containing the first and last names respectively. For example if you have a list
 containing your names as strings (either byte strings or Unicode strings), you
