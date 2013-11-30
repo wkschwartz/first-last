@@ -25,4 +25,6 @@ def split_name(name):
 	non-matching string is encoutered, we return ``None``.
 	'''
 	match = FIRST_LAST.search(name)
-	return None if match is None else (match.group(1), match.group(2))
+	if match is None:
+		return None
+	return match.group(1), match.group(2)
