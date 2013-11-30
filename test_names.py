@@ -2,12 +2,12 @@
 # ~*~ encoding: utf-8 ~*~
 import unittest
 
-from names import split_names
+from names import split_name
 
 
-class TestSplitNames(unittest.TestCase):
+class TestSplitName(unittest.TestCase):
 
-	"Test the ``names.split_names`` function to ensure it works as intended."
+	"Test the ``names.split_name`` function to ensure it works as intended."
 
 	# The test data below is called a "data fixture" because it's fixed ahead of
 	# when the test is run. Constant values like the ones below usually get
@@ -32,23 +32,22 @@ class TestSplitNames(unittest.TestCase):
 				(u"colada",     u"Piña"),
 	)
 
-	def test_split_names(self):
+	def test_split_name(self):
 		"Test that input matches the expected output."
-		self.assertEqual(sorted(split_names(self.NAMES)), sorted(self.EXPECTED))
+		output = sorted(split_name(name) for name in self.NAMES)
+		self.assertEqual(output, sorted(self.EXPECTED))
 
 	def test_bad_input(self):
-		"Test ``split_names`` responds with appropriate errors to bad input."
-		for bad_names in 1, 1.0, 1j, [1, 1.0], {1: 1.0}:
-			# Check that ``list(split_names(bad_names))`` raises a
-			# ``TypeError``. We call ``list`` to force the generator to start
-			# running.
-			self.assertRaises(TypeError, list, split_names, bad_names)
+		"Test ``split_name`` responds with appropriate errors to bad input."
+		for bad_name in 1, 1.0, 1j, [1, 1.0], {1: 1.0}, None:
+			# Check that ``split_name(bad_name)`` raises a ``TypeError``.
+			self.assertRaises(TypeError, split_name, bad_name)
 
 	def test_None_on_non_matching_strings(self):
-		"Test that we yield ``None`` on non-matching strings."
+		"Test that we return ``None`` on non-matching strings."
 		# Sorry, Yao Ming.
-		names = (u"姚明", "Sam Jones", "1234")
-		self.assertEqual(list(split_names(names)), [None, ('Sam', 'Jones'), None])
+		for name in u"姚明", "1234":
+			self.assertIsNone(split_name(name))
 
 
 if __name__ == '__main__':

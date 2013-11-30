@@ -19,13 +19,12 @@ or by going to https://github.com/wkschwartz/first-last/archive/master.zip.
 Usage
 -----
 
-The module `names` provides the function `split_names`. Its input is any
-iterable (some `y` for which you can write `for x in y`) of strings. It is a
-generator, which means it too is iterable. For example if you have a list
-containing your names as strings (either byte strings or Unicode strings), you
-can write
+The module `names` provides the function `split_name`. Its input is a string
+containing a name. It returns a two-tuple of strings containing the first and
+last names respectively. For example if you have a list containing your names as
+strings (either byte strings or Unicode strings), you can write
 
-    names = list(split_names(names))
+    first_name, last_name = split_name(name)
 
 Testing
 -------

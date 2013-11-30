@@ -18,15 +18,11 @@ import re
 FIRST_LAST = re.compile(r"(\w*)\s+((?:\w|\s|['-]){2,})", flags=re.UNICODE)
 
 
-def split_names(names):
-	'''Return iterable of ("First", "Last") tuples from  strings like "First Last".
+def split_name(name):
+	'''Return ("First", "Last") tuple from a string like "First Last".
 
-	``names`` is a an iterable of strings. This function returns a generator
-	over strings. When a non-matching string is encoutered, we yield ``None``.
+	``name`` is a string. This function returns a tuple of strings. When a
+	non-matching string is encoutered, we yield ``None``.
 	'''
-	for name in names:
-		match = FIRST_LAST.search(name)
-		if match is None:
-			yield None
-		else:
-			yield match.group(1), match.group(2)
+	match = FIRST_LAST.search(name)
+	return None if match is None else (match.group(1), match.group(2))
