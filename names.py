@@ -22,7 +22,7 @@ def split_name(name):
 	'''Return ("First", "Last") tuple from a string like "First Last".
 
 	``name`` is a string. This function returns a tuple of strings. When a
-	non-matching string is encoutered, we yield ``None``.
+	non-matching string is encoutered, we return ``None``.
 	'''
 	match = FIRST_LAST.search(name)
 	return None if match is None else (match.group(1), match.group(2))
