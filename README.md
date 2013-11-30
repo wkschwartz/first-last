@@ -24,9 +24,8 @@ Usage
 Copy the `names.py` file into your project and the `test_names.py` file into
 your project's tests. The module `names` provides the function `split_name`. Its
 input is a string containing a name. It returns a two-tuple of strings
-containing the first and last names respectively. For example if you have a list
-containing your names as strings (either byte strings or Unicode strings), you
-can write
+containing the first and last names respectively. For example if you have a
+string (either byte strings or Unicode strings) called ``name``, you can write
 
 ```python
     from names import split_name
